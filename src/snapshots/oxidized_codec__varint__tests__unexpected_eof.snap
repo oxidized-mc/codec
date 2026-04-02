@@ -1,0 +1,5 @@
+---
+source: src/varint.rs
+expression: "format!(\"{}\", VarIntError::UnexpectedEof)"
+---
+unexpected end of buffer

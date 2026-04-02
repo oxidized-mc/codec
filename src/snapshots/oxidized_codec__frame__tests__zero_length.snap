@@ -1,0 +1,5 @@
+---
+source: src/frame.rs
+expression: "format!(\"{}\", FrameError::ZeroLength)"
+---
+zero-length frame
