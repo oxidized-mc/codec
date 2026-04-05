@@ -5,7 +5,7 @@
 //! encodes a 32-bit value in 1–5 bytes; VarLong encodes a 64-bit value
 //! in 1–10 bytes.
 //!
-//! See ADR-007 (Packet Codec) for design rationale.
+//! Part of the packet codec framework (derive macros + wire-type mapping).
 
 use std::io;
 

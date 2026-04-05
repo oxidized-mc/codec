@@ -1,7 +1,7 @@
 //! Minecraft protocol codec — VarInt/VarLong encoding, Packet trait, wire-format type
 //! readers/writers, frame encoding.
 //!
-//! See ADR-007 (Packet Codec) for design rationale.
+//! Uses derive macros and a wire-type mapping to keep codec logic declarative.
 
 #![warn(missing_docs)]
 #![deny(unsafe_code)]
