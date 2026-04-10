@@ -65,6 +65,13 @@ pub enum TypeError {
     /// Invalid UTF-8 in a string.
     #[error("invalid UTF-8: {0}")]
     InvalidUtf8(#[from] std::string::FromUtf8Error),
+
+    /// Value was successfully read but is not a recognized variant.
+    #[error("invalid value: {value}")]
+    InvalidValue {
+        /// The unrecognized value that was read.
+        value: i32,
+    },
 }
 
 /// Reads a VarInt-length-prefixed UTF-8 string from `buf`.
@@ -396,6 +403,10 @@ mod tests {
         insta::assert_snapshot!(
             "unexpected_eof",
             format!("{}", TypeError::UnexpectedEof { need: 16, have: 4 })
+        );
+        insta::assert_snapshot!(
+            "invalid_value",
+            format!("{}", TypeError::InvalidValue { value: 42 })
         );
     }
 
